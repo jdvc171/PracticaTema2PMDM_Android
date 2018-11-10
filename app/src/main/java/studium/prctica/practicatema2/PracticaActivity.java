@@ -1,4 +1,4 @@
-package studium.prctica.prcticatema1;
+package studium.prctica.practicatema2;
 
 //import android.app.Activity;
 
@@ -14,6 +14,8 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import studium.prctica.prcticatema1.R;
 
 
 public class PracticaActivity extends AppCompatActivity  {
