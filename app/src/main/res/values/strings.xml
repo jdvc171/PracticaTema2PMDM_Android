@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Datos Personales</string>
+    <string name="nombre1">Nombre: </string>
+    <string name="ayudaIntroNombre">Introduzca su nombre </string>
+    <string name="apellidos">Apellidos: </string>
+    <string name="ayudaIntroApellidos">Introduzca sus apellidos </string>
+    <string name="edad">Edad: </string>
+    <string name="ayudaIntroEdad">Introduzca su edad </string>
+    <string name="genero">Género: </string>
+    <string name="hombre">Hombre </string>
+    <string name="mujer">Mujer </string>
+    <string name="estado">Estado: </string>
+    <string name="item1">Casado</string>
+    <string name="item2">Separado</string>
+    <string name="item3">Viudo</string>
+    <string name="item4">Otro</string>
+    <string-array name="estado2">
+        <item>@string/item1</item>
+        <item>@string/item2</item>
+        <item>@string/item3</item>
+        <item>@string/item4</item>
+    </string-array>
+    <string name="hijos">Hijos: </string>
+    <string name="switch2"> No/Si</string>
+    <string name="btn1">ACEPTAR</string>
+    <string name="btn2">LIMPIAR</string>
+    <string name="btn3">VOLVER</string>
+    <string name="datos">Datos: </string>
+    <string name="datosError">No ha rellenado los siguientes campos: </string>
+
+
+</resources>

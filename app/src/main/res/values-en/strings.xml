@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Datos Personales</string>
+    <string name="nombre1">" Name: "</string>
+    <string name="ayudaIntroNombre">Write your name</string>
+    <string name="apellidos">" Surname: "</string>
+    <string name="ayudaIntroApellidos">Write your surname</string>
+    <string name="edad">"Age: "</string>
+    <string name="ayudaIntroEdad">Write your age</string>
+    <string name="genero">"Genre: "</string>
+    <string name="hombre">Male</string>
+    <string name="mujer">Famale</string>
+    <string name="estado">"State: "</string>
+    <string name="item1">Married</string>
+    <string name="item2">Separated</string>
+    <string name="item3">Widower</string>
+    <string name="item4">Other</string>
+    <string name="hijos">"Childrens: "</string>
+    <string name="switch2">No/Yes</string>
+    <string name="btn1">ACEPT</string>
+    <string name="btn2">CLEAN</string>
+    <string name="datos">"Dates: "</string>
+    <string name="datosError">"Empty fields: "</string>
+    <string name="btn3">Back</string>
+</resources>
