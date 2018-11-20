@@ -1,7 +1,5 @@
 package studium.prctica.practicatema2;
 
-//import android.app.Activity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,9 +12,7 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
-
 import studium.prctica.prcticatema1.R;
-
 
 public class PracticaActivity extends AppCompatActivity  {
 
@@ -32,8 +28,6 @@ public class PracticaActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_practica);
-
-
 
         //Obtenemos una referencia a los controles de la interfaz
         txtNombre = (TextView)findViewById(R.id.nombre);
@@ -54,7 +48,8 @@ public class PracticaActivity extends AppCompatActivity  {
 
         txtdatosError.setVisibility(View.INVISIBLE);
 
-         adapEstados =  ArrayAdapter.createFromResource(this,R.array.estado2,android.R.layout.simple_spinner_dropdown_item);
+         adapEstados =  ArrayAdapter.createFromResource(this,R.array.estado2,
+                        android.R.layout.simple_spinner_dropdown_item);
 
         lista1.setAdapter(adapEstados);
 
@@ -66,7 +61,10 @@ public class PracticaActivity extends AppCompatActivity  {
                 int rg1 = RG.getCheckedRadioButtonId();
                 RadioButton rb1 = findViewById(rg1);
 
-                 if(!editNombre.getText().toString().isEmpty() && !editapellidos.getText().toString().isEmpty() && !editedad.getText().toString().isEmpty())
+                 if(!editNombre.getText().toString().isEmpty() &&
+                         !editapellidos.getText().toString().isEmpty() &&
+                         !editedad.getText().toString().isEmpty())
+
                 {
                     //Condicion edad
                     String años= editedad.getText().toString();
@@ -77,18 +75,22 @@ public class PracticaActivity extends AppCompatActivity  {
                     else{edadFinal="Mayor de edad";}
 
                     //Creamos el Intent
-                    Intent intent = new Intent(PracticaActivity.this, EtiquetaMostrarDatos.class);
-                    intent.putExtra("DATOS",editapellidos.getText().toString()+", "+editNombre.getText().toString()+"\n"+edadFinal +", "+ rb1.getText()+", " + lista1.getSelectedItem()+"\n" + txtVhijos.getText() + switch1.getTextOff()+"\n");
+                    Intent intent = new Intent(PracticaActivity.this,
+                            EtiquetaMostrarDatos.class);
+                    intent.putExtra("DATOS",editapellidos.getText().toString()+", "+
+                            editNombre.getText().toString()+"\n"+edadFinal +", "+ rb1.getText()+
+                            ", " + lista1.getSelectedItem()+"\n" + txtVhijos.getText() +
+                            switch1.getTextOff()+"\n");
 
 
                     //Iniciamos la nueva actividad
                     startActivity(intent);
 
-
-
                 }
 
-                else if (editNombre.getText().toString().isEmpty() || editapellidos.getText().toString().isEmpty() || editedad.getText().toString().isEmpty()) {
+                else if (editNombre.getText().toString().isEmpty() ||
+                         editapellidos.getText().toString().isEmpty() ||
+                         editedad.getText().toString().isEmpty()) {
                      txtdatosError.setText(R.string.datosError);
                      String data= txtdatosError.getText().toString();
                      if(editNombre.getText().toString().isEmpty()){
@@ -100,10 +102,10 @@ public class PracticaActivity extends AppCompatActivity  {
                      if(editedad.getText().toString().isEmpty()){
                          data+=txtEdad.getText().toString();
                      }
+                     String caca= getResources().getString(R.string.mujer);
 
 
-
-                    txtdatosError.setText(data);
+                    txtdatosError.setText(data+caca);
                      txtdatosError.setVisibility(View.VISIBLE);
                 }
             }

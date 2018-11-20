@@ -14,6 +14,7 @@ public class EtiquetaMostrarDatos extends AppCompatActivity {
 
     TextView txtV;
     Button btn3;
+    //prueba para ver si actualiza
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +37,8 @@ public class EtiquetaMostrarDatos extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(EtiquetaMostrarDatos.this, PracticaActivity.class);
+                Intent intent = new Intent(EtiquetaMostrarDatos.this,
+                        PracticaActivity.class);
                 //Iniciamos la nueva actividad
                 startActivity(intent);
             }

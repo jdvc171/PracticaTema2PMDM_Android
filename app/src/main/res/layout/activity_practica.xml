@@ -173,10 +173,8 @@
         </LinearLayout><![CDATA[
 
         />
-
     ]]>
     </LinearLayout>
-
 
     <TextView
         android:id="@+id/textView0"
