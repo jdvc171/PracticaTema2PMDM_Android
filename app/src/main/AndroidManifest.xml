@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="studium.prctica.prcticatema1">
+    package="studium.prctica.prcticatema2">
 
     <application
         android:allowBackup="true"

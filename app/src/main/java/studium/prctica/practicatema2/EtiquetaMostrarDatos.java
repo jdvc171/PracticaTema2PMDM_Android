@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import studium.prctica.prcticatema1.R;
+import studium.prctica.prcticatema2.R;
 
 
 public class EtiquetaMostrarDatos extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package studium.prctica.prcticatema1;
+package studium.prctica.prcticatema2;
 
 import org.junit.Test;
 
