@@ -1,6 +1,5 @@
 package studium.prctica.practicatema2;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,13 +11,14 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
+
 import studium.prctica.prcticatema2.R;
 
 public class PracticaActivity extends AppCompatActivity  {
 
     Spinner lista1;
     EditText editNombre,editapellidos,editedad;
-    TextView txtNombre,txtApellidos,txtEdad,txtVhijos,txtgenero,txtdatos,txtdatosError;
+    TextView txtNombre,txtApellidos,txtEdad,txtVhijos,txtgenero,txtdatosError,txtCorrecto;
     Switch switch1;
     Button btn1,btn2;
     RadioGroup RG;
@@ -38,6 +38,7 @@ public class PracticaActivity extends AppCompatActivity  {
         editapellidos =  findViewById(R.id.editText4);
         editedad =  findViewById(R.id.editText5);
         txtdatosError = findViewById(R.id.textView0);
+        txtCorrecto = findViewById(R.id.textViewCorrecto);
         txtVhijos = findViewById(R.id.textView9);
         txtgenero =  findViewById(R.id.textView7);
         switch1 =  findViewById(R.id.switch1);
@@ -47,7 +48,7 @@ public class PracticaActivity extends AppCompatActivity  {
         RG =  findViewById(R.id.radioButton1);
 
         txtdatosError.setVisibility(View.INVISIBLE);
-
+        txtCorrecto.setVisibility(View.INVISIBLE);
          adapEstados =  ArrayAdapter.createFromResource(this,R.array.estado2,
                         android.R.layout.simple_spinner_dropdown_item);
 
@@ -60,7 +61,20 @@ public class PracticaActivity extends AppCompatActivity  {
                 //Obtenemos radiobutton seleccionado
                 int rg1 = RG.getCheckedRadioButtonId();
                 RadioButton rb1 = findViewById(rg1);
+                txtdatosError.setVisibility(View.INVISIBLE);
+                txtCorrecto.setText("");
 
+                //obtenemos el valor del switch
+                String sino="";
+                boolean nosi = switch1.isChecked();
+                if (nosi==true){
+                    sino=switch1.getTextOn().toString();
+                }
+                else{
+                    sino =switch1.getTextOff().toString();
+                }
+
+                //Iniciamos las condiciones para mostrar resultados
                  if(!editNombre.getText().toString().isEmpty() &&
                          !editapellidos.getText().toString().isEmpty() &&
                          !editedad.getText().toString().isEmpty())
@@ -74,17 +88,13 @@ public class PracticaActivity extends AppCompatActivity  {
                     if(años2<18){edadFinal="Menor de edad";}
                     else{edadFinal="Mayor de edad";}
 
-                    //Creamos el Intent
-                    Intent intent = new Intent(PracticaActivity.this,
-                            EtiquetaMostrarDatos.class);
-                    intent.putExtra("DATOS",editapellidos.getText().toString()+", "+
+
+
+                    txtCorrecto.setText(editapellidos.getText().toString()+", "+
                             editNombre.getText().toString()+"\n"+edadFinal +", "+ rb1.getText()+
                             ", " + lista1.getSelectedItem()+"\n" + txtVhijos.getText() +
-                            switch1.getTextOff()+"\n");
-
-
-                    //Iniciamos la nueva actividad
-                    startActivity(intent);
+                            sino+"\n");
+                    txtCorrecto.setVisibility(View.VISIBLE);
 
                 }
 
@@ -102,11 +112,12 @@ public class PracticaActivity extends AppCompatActivity  {
                      if(editedad.getText().toString().isEmpty()){
                          data+=txtEdad.getText().toString();
                      }
-                     String caca= getResources().getString(R.string.mujer);
 
 
-                    txtdatosError.setText(data+caca);
+                     txtdatosError.setText(data);
                      txtdatosError.setVisibility(View.VISIBLE);
+
+
                 }
             }
         });
@@ -120,6 +131,8 @@ public class PracticaActivity extends AppCompatActivity  {
                 switch1.setChecked(false);
                 RG.check(R.id.radioButton6);
                 lista1.setSelection(0);
+                txtCorrecto.setText("");
+                txtCorrecto.setVisibility(View.INVISIBLE);
                 txtdatosError.setVisibility(View.INVISIBLE);
                 txtdatosError.setText(R.string.datosError);
             }
