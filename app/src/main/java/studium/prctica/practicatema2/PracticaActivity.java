@@ -30,21 +30,21 @@ public class PracticaActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_practica);
 
         //Obtenemos una referencia a los controles de la interfaz
-        txtNombre = (TextView)findViewById(R.id.nombre);
-        txtApellidos = (TextView)findViewById(R.id.apellidos);
-        txtEdad = (TextView)findViewById(R.id.edad);
+        txtNombre = findViewById(R.id.nombre);
+        txtApellidos = findViewById(R.id.apellidos);
+        txtEdad = findViewById(R.id.edad);
 
-        editNombre = (EditText) findViewById(R.id.editText3);
-        editapellidos = (EditText) findViewById(R.id.editText4);
-        editedad = (EditText) findViewById(R.id.editText5);
-        txtdatosError = (TextView)findViewById(R.id.textView0);
-        txtVhijos = (TextView)findViewById(R.id.textView9);
-        txtgenero = (TextView) findViewById(R.id.textView7);
-        switch1 = (Switch) findViewById(R.id.switch1);
-        lista1 = (Spinner) findViewById(R.id.lista1);
+        editNombre =  findViewById(R.id.editText3);
+        editapellidos =  findViewById(R.id.editText4);
+        editedad =  findViewById(R.id.editText5);
+        txtdatosError = findViewById(R.id.textView0);
+        txtVhijos = findViewById(R.id.textView9);
+        txtgenero =  findViewById(R.id.textView7);
+        switch1 =  findViewById(R.id.switch1);
+        lista1 =  findViewById(R.id.lista1);
         btn1 = (Button)findViewById(R.id.button);
         btn2 = (Button) findViewById(R.id.button2);
-        RG = (RadioGroup) findViewById(R.id.radioButton1);
+        RG =  findViewById(R.id.radioButton1);
 
         txtdatosError.setVisibility(View.INVISIBLE);
 
@@ -119,6 +119,7 @@ public class PracticaActivity extends AppCompatActivity  {
                 editapellidos.setText("");
                 switch1.setChecked(false);
                 RG.check(R.id.radioButton6);
+                lista1.setSelection(0);
                 txtdatosError.setVisibility(View.INVISIBLE);
                 txtdatosError.setText(R.string.datosError);
             }
