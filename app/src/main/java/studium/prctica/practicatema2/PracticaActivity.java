@@ -1,5 +1,6 @@
 package studium.prctica.practicatema2;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -18,11 +19,14 @@ public class PracticaActivity extends AppCompatActivity  {
 
     Spinner lista1;
     EditText editNombre,editapellidos,editedad;
-    TextView txtNombre,txtApellidos,txtEdad,txtVhijos,txtgenero,txtdatosError,txtCorrecto;
+    TextView txtNombre,txtApellidos,txtEdad,txtVhijos,txtgenero,txtdatosError,txtCorrecto,txtEstado;
     Switch switch1;
     Button btn1,btn2;
     RadioGroup RG;
     ArrayAdapter adapEstados;
+
+    //objetos para la fuente
+    Typeface West;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,7 @@ public class PracticaActivity extends AppCompatActivity  {
         editNombre =  findViewById(R.id.editText3);
         editapellidos =  findViewById(R.id.editText4);
         editedad =  findViewById(R.id.editText5);
+        txtEstado = findViewById(R.id.textView8);
         txtdatosError = findViewById(R.id.textView0);
         txtCorrecto = findViewById(R.id.textViewCorrecto);
         txtVhijos = findViewById(R.id.textView9);
@@ -53,6 +58,19 @@ public class PracticaActivity extends AppCompatActivity  {
                         android.R.layout.simple_spinner_dropdown_item);
 
         lista1.setAdapter(adapEstados);
+
+        //aplicamos fuente a elementos
+        String fuente1 = "fuentes/West.ttf";
+        this.West = Typeface.createFromAsset(getAssets(),fuente1);
+        txtNombre.setTypeface(West);
+        txtApellidos.setTypeface(West);
+        txtEdad.setTypeface(West);
+        txtgenero.setTypeface(West);
+        txtCorrecto.setTypeface(West);
+        txtVhijos.setTypeface(West);
+        txtEstado.setTypeface(West);
+        btn1.setTypeface(West);
+        btn2.setTypeface(West);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
