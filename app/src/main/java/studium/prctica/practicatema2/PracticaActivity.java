@@ -1,8 +1,8 @@
 package studium.prctica.practicatema2;
 
+import android.app.Activity;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import studium.prctica.prcticatema2.R;
 
-public class PracticaActivity extends AppCompatActivity  {
+public class PracticaActivity extends Activity {
 
     Spinner lista1;
     EditText editNombre,editapellidos,editedad;
